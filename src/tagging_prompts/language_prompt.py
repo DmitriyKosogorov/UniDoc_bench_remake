@@ -1,0 +1,2 @@
+LANGUAGE_PROMPT = """Detect the primary language present in the given images. Analyze any text within the images, identify the language, and provide the detected language name along with its confidence level. If multiple languages are present, list them in order of prominence.
+Return your answer as a Python list of language names in English, with no additional commentary or text. For example: ["English", "German", "Arabic"]. If no text is recognized or if you cannot determine the language, return an empty list: []"""
