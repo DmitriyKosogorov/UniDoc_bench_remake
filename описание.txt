@@ -1,0 +1,68 @@
+Pipeline Steps:
+
+1    Knowledge Graph Creation (1_kg_create.py) - Build knowledge graphs from documents
+2    QA Synthesis (2_qa_synthesize.py) - Generate QA pairs using RAGAS framework
+3    Quality Filtering (3_filter_qa.py) - Filter out low-quality pairs
+4    Similarity Filtering (4_filter_similarities.py) - Remove duplicate/similar questions
+5    Balancing (5_balance.py) - Balance question types and difficulty
+6    Rewriting (6_rewriting.py) - Improve question quality and diversity
+
+
+
+baseline лежат в src/baselines
+- для работы только с текстовыми данными используется simple_rag.py
+	- основная библиотека - llama_index
+	- обращается к Retriever через VectorIndexRetriever
+	- 
+- для работы только с изображениями используется image_rag.py
+- остальные файлы: image_text_rag.py (и текст, и изображения), image_rag_gme.py (работа с изображениями с gemini), image_rag_voyage.py (работа с изображениями с voyage)
+
+оценщики лежат в src/evaluation
+- correctness.py: оценка правильности
+- evaluation_ragas.py: оценка из RAGAS (специальная библиотека для оценки )
+
+
+Supported Models:
+    GPT-4, GPT-3.5
+    Gemini Pro
+    Qwen-VL
+    Various embedding models (OpenAI, Voyage, etc.)
+    
+
+Обработка документа делается через БЯМ 
+    Domain classification (healthcare, finance, legal, etc.)
+    Language detection
+    Date extraction
+    Modality identification (text, images, tables)
+    Format analysis
+    
+
+Граф знаний строится на RAGAS.testset.graph.knowledgeGraph
+
+Оценки:
+- Correctness (генератор) - задаём GPT-4o вопрос о корректности ответа, если ответ положительный - прибавляем адын.
+- Faithfulness (генератор) - 
+- Retrieval evaluation - MRR@k, precision, recall (precision@10, recall@10),  
+
+
+Типы вопросов:
+- text-only
+- image-only
+- image-plus-text
+- table-required
+
+
+Дополнительная информация
+- в проекте куча зависимостей и нет файла requirenments.txt. Даже на Гитхабе про это спрашивали аж 2 раза. Непонятно, что за пакет pdf_convert (просто pip install pdf_convert не работает). На всём Гитхабе нет такого (видимо, локальный файл)
+- всему требуется подключение к моделям по API
+- непонятно, что такое ICL
+- отвратительные описания аргументов в simple_rag.py (что такое folder, folder_elements?)
+- похоже, считывание всех документов происходит при RAG независимо от того, сохранены ли индексы, или нет (даже если все документы занесены в БД, всё равно обрабатывается)
+- обработка запросов не соответствует формату данных, из-за чего требуются дополнительные усилия, чтобы получить обработку (считывание переписано, возможно утрачен смысл, внесённый автором)
+- в simple_rag (позиционирующийся как классический основанный на тексте) происходит вызов функций для обработки изображений, который не работает с построением БД из этого же файла. Даже в запросах к БД происходят постоянные упоминания изображений (видимо, код просто копипастили из более продвинутых версий RAG). Требует поле Contexts, которое отсутствует в файлах с вопросами. Из-за того, что в промтах идёт ссылка на контексты и изображения, которых по факту нет, llama3.1 не даёт ответ на основе предосатвленных контекстов и изображений.
+- Формат запроса к LLM в принципе какой-то странный: получается список словарей списков словарей, а не нормальный запрос. Может, к ЖиПиТи так и нужно обращаться.
+- Да кто такой этот ваш context (codex говорить, что это чанки, которые можно использовать для получения ответа, которые как chunks_used, но не chunk_used)?
+- ссылки на чанки, страницы и прочее все заносятся в названия файлов и извлекаются через парсинг строки (тип, зачем?), хотя проще было бы замутить отдельные поля для страниц и документов
+- есть подозрение, что QA-файлы предоставленные невалидны - там нет context, там указаны странные ссылки на файлы с чанками
+- В коде пропущено очень много текста на Exception. Возможно, авторы хотели предложить пользователям самим решить, как у них должны обрабатываться ошибки, но код из-за этого невалиден.
+

@@ -1,0 +1,17 @@
+/home/user/RAG/UniDoc_bench/UniDoc-Bench/data/downloaded/UniDoc-Bench/commerce_manufacturing_pdfs/commerce_manufacturing/2097447.pdf
+/home/user/RAG/UniDoc_bench/UniDoc-Bench/data/downloaded/UniDoc-Bench/commerce_manufacturing_pdfs/commerce_manufacturing/6154919.pdf
+/home/user/RAG/UniDoc_bench/UniDoc-Bench/data/downloaded/UniDoc-Bench/commerce_manufacturing_pdfs/commerce_manufacturing/2963827.pdf
+/home/user/RAG/UniDoc_bench/UniDoc-Bench/data/downloaded/UniDoc-Bench/commerce_manufacturing_pdfs/commerce_manufacturing/3345055.pdf
+/home/user/RAG/UniDoc_bench/UniDoc-Bench/data/downloaded/UniDoc-Bench/commerce_manufacturing_pdfs/commerce_manufacturing/1639922.pdf
+/home/user/RAG/UniDoc_bench/UniDoc-Bench/data/downloaded/UniDoc-Bench/commerce_manufacturing_pdfs/commerce_manufacturing/2975113.pdf
+/home/user/RAG/UniDoc_bench/UniDoc-Bench/data/downloaded/UniDoc-Bench/commerce_manufacturing_pdfs/commerce_manufacturing/0289109.pdf
+/home/user/RAG/UniDoc_bench/UniDoc-Bench/data/downloaded/UniDoc-Bench/commerce_manufacturing_pdfs/commerce_manufacturing/1373311.pdf
+/home/user/RAG/UniDoc_bench/UniDoc-Bench/data/downloaded/UniDoc-Bench/commerce_manufacturing_pdfs/commerce_manufacturing/7216616.pdf
+/home/user/RAG/UniDoc_bench/UniDoc-Bench/data/downloaded/UniDoc-Bench/commerce_manufacturing_pdfs/commerce_manufacturing/0819031.pdf
+/home/user/RAG/UniDoc_bench/UniDoc-Bench/data/downloaded/UniDoc-Bench/commerce_manufacturing_pdfs/commerce_manufacturing/0683542.pdf
+/home/user/RAG/UniDoc_bench/UniDoc-Bench/data/downloaded/UniDoc-Bench/commerce_manufacturing_pdfs/commerce_manufacturing/4120847.pdf
+/home/user/RAG/UniDoc_bench/UniDoc-Bench/data/downloaded/UniDoc-Bench/commerce_manufacturing_pdfs/commerce_manufacturing/6704103.pdf
+/home/user/RAG/UniDoc_bench/UniDoc-Bench/data/downloaded/UniDoc-Bench/commerce_manufacturing_pdfs/commerce_manufacturing/5183787.pdf
+/home/user/RAG/UniDoc_bench/UniDoc-Bench/data/downloaded/UniDoc-Bench/commerce_manufacturing_pdfs/commerce_manufacturing/2670216.pdf
+/home/user/RAG/UniDoc_bench/UniDoc-Bench/data/downloaded/UniDoc-Bench/commerce_manufacturing_pdfs/commerce_manufacturing/3043115.pdf
+/home/user/RAG/UniDoc_bench/UniDoc-Bench/data/downloaded/UniDoc-Bench/commerce_manufacturing_pdfs/commerce_manufacturing/5306751.pdf
