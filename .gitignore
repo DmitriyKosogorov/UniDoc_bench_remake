@@ -1,1 +1,3 @@
 data/downloaded/
+naive_RAG/Faiss_naive_database/
+src/baselines/databases/simple_rag/commerce_manufacturing/paper/
